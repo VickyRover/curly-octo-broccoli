@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tamil Dialect AI - Preserve Heritage Through Technology</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            overflow-x: hidden;
+            color: #333;
+        }
+
+        /* Animated Background */
+        .animated-bg {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+
+        .circle {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            animation: float 20s infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-100px) rotate(180deg); }
+        }
+
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 5%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            animation: slideDown 0.5s ease;
+        }
+
+        @keyframes slideDown {
+            from { transform: translateY(-100%); }
+            to { transform: translateY(0); }
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, #ff0000, #F7931E);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #333;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #FF6B35;
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 80px;
+            padding: 5rem 5%;
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-content {
+            max-width: 1400px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            color: white;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero-text .tamil-text {
+            font-size: 2rem;
+            color: #FFD700;
+            margin-bottom: 2rem;
+            animation: fadeInUp 1.2s ease;
+        }
+
+        .hero-text p {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+            animation: fadeInUp 1.4s ease;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            animation: fadeInUp 1.6s ease;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #FF6B35, #F7931E);
+            color: white;
+            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(255, 107, 53, 0.4);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: #FF6B35;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-secondary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Interactive Card */
+        .hero-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 3rem;
+            border-radius: 30px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+            animation: fadeInRight 1s ease;
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 1.5rem;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 20px;
+            color: white;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .stat-card:hover {
+            transform: scale(1.05) rotate(2deg);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 5rem 5%;
+            background: white;
+        }
+
+        .features h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .features-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+            cursor: pointer;
+            border: 2px solid transparent;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+            border-color: #FF6B35;
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: inline-block;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .feature-card:hover .feature-icon {
+            animation: spin 0.5s ease;
+        }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .feature-card h3 {
+            color: #333;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .feature-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Interactive Demo Section */
+        .demo-section {
+            padding: 5rem 5%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .demo-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .demo-section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: white;
+            margin-bottom: 3rem;
+        }
+
+        .demo-interface {
+            background: white;
+            border-radius: 30px;
+            padding: 3rem;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .dialect-selector {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .dialect-btn {
+            padding: 1rem 2rem;
+            border: 2px solid #667eea;
+            background: white;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 600;
+        }
+
+        .dialect-btn:hover, .dialect-btn.active {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            transform: scale(1.05);
+        }
+
+        .story-display {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 20px;
+            min-height: 300px;
+            margin-bottom: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .story-display::before {
+            content: '📖';
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 3rem;
+            opacity: 0.2;
+        }
+
+        .story-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #333;
+        }
+
+        .story-tamil {
+            font-size: 1.3rem;
+            color: #FF6B35;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        /* Dialects Showcase */
+        .dialects-showcase {
+            padding: 5rem 5%;
+            background: white;
+        }
+
+        .dialects-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .dialect-card {
+            background: linear-gradient(135deg, #FF6B35, #F7931E);
+            padding: 2rem;
+            border-radius: 20px;
+            color: white;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .dialect-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%);
+            transform: scale(0);
+            transition: transform 0.5s;
+        }
+
+        .dialect-card:hover::before {
+            transform: scale(1);
+        }
+
+        .dialect-card:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 20px 50px rgba(255, 107, 53, 0.4);
+        }
+
+        .dialect-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .dialect-card p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 3rem 5%;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #FF6B35;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+
+            .hero-text .tamil-text {
+                font-size: 1.5rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Loading Animation */
+        .loader {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #FF6B35;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 2rem auto;
+            display: none;
+        }
+
+        /* Pulse Animation */
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+    </style>
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="animated-bg" id="animatedBg"></div>
+
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">🎭 Tamil Dialect AI</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#demo">Demo</a></li>
+                <li><a href="#dialects">Dialects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Preserve Tamil Dialects Through AI</h1>
+                <div class="tamil-text">தமிழ் பேச்சுவழக்குகளை பாதுகாப்போம்</div>
+                <p>Join us in preserving endangered Tamil dialects using cutting-edge AI technology. Record, transcribe, and share folk stories from community elders.</p>
+                <div class="cta-buttons">
+                    <button class="btn btn-primary" onclick="scrollToDemo()">Try Demo</button>
+                    <button class="btn btn-secondary" onclick="showAlert('Learn More')">Learn More</button>
+                </div>
+            </div>
+
+            <div class="hero-card pulse">
+                <div class="stats-grid">
+                    <div class="stat-card" onclick="animateNumber(this)">
+                        <div class="stat-number" data-target="847">0</div>
+                        <div class="stat-label">Stories Archived</div>
+                    </div>
+                    <div class="stat-card" onclick="animateNumber(this)">
+                        <div class="stat-number" data-target="12">0</div>
+                        <div class="stat-label">Dialects Covered</div>
+                    </div>
+                    <div class="stat-card" onclick="animateNumber(this)">
+                        <div class="stat-number" data-target="234">0</div>
+                        <div class="stat-label">Contributors</div>
+                    </div>
+                    <div class="stat-card" onclick="animateNumber(this)">
+                        <div class="stat-number" data-target="1523">0</div>
+                        <div class="stat-label">Active Users</div>
+                    </div>
+                </div>
+                <button class="btn btn-primary" style="width: 100%;" onclick="startRecording()">🎙️ Start Recording</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <h2>Powerful Features for Cultural Preservation</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🎙️</div>
+                <h3>Audio Recording</h3>
+                <p>Record folk stories, proverbs, and idioms directly from community elders with our easy-to-use interface.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🤖</div>
+                <h3>AI Processing</h3>
+                <p>Automatic speech recognition and NLP for accurate transcription and dialect identification.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-card">
+                <div class="feature-icon">🌍</div>
+                <h3>Multi-Dialect Support</h3>
+                <p>Support for 12+ Tamil dialects including Kongu, Madurai, Tirunelveli, and Chennai Tamil.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📖</div>
+                <h3>Story Library</h3>
+                <p>Browse and search through a rich collection of archived stories with cultural annotations.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🔍</div>
+                <h3>Dialect Analysis</h3>
+                <p>Explore phonological features, unique expressions, and linguistic characteristics of each dialect.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📊</div>
+                <h3>Analytics Dashboard</h3>
+                <p>Track preservation efforts with detailed analytics and geographic distribution maps.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Demo Section -->
+    <section class="demo-section" id="demo">
+        <div class="demo-container">
+            <h2>✨ Interactive Story Generator</h2>
+            <div class="demo-interface">
+                <h3 style="margin-bottom: 1.5rem; color: #333;">Select a Tamil Dialect:</h3>
+                <div class="dialect-selector">
+                    <button class="dialect-btn active" onclick="selectDialect(this, 'Kongu Tamil')">Kongu Tamil</button>
+                    <button class="dialect-btn" onclick="selectDialect(this, 'Madurai Tamil')">Madurai Tamil</button>
+                    <button class="dialect-btn" onclick="selectDialect(this, 'Tirunelveli Tamil')">Tirunelveli Tamil</button>
+                    <button class="dialect-btn" onclick="selectDialect(this, 'Chennai Tamil')">Chennai Tamil</button>
+                </div>
+
+                <div class="story-display" id="storyDisplay">
+                    <div class="story-tamil" id="storyTitle">முயற்சி திருவினையாக்கும்</div>
+                    <div class="story-content" id="storyContent">
+                        ஒரு காலத்துல எங்கட ஊர்ல ஒரு சிறு விவசாயி வாழ்ந்தான். அவன் வயல்ல நல்ல பயிர் விளைய ரொம்ப முயற்சி பண்ணினான்.
+                        <br><br>
+                        எல்லாரும் "இந்த மண்ணுல எதுவும் விளையாது"னு சொன்னாங்க. ஆனா அவன் கேக்கலை. நாள் முழுக்க கடுமையா உழைச்சான்.
+                        <br><br>
+                        மூணு வருஷம் கழிச்சு, அவன் வயல் கிராமத்துலேயே சிறந்த விளைச்சலை கொடுத்துச்சு.
+                        <br><br>
+                        <strong>பாடம்:</strong> முயற்சி உடையார் இகழ்ச்சி அடையார் - விடாமுயற்சி எப்பவும் வெற்றி தரும்.
+                    </div>
+                </div>
+
+                <div class="loader" id="loader"></div>
+
+                <div class="action-buttons">
+                    <button class="btn btn-primary" onclick="generateStory()">🎲 Generate New Story</button>
+                    <button class="btn btn-secondary" onclick="playAudio()">🔊 Listen</button>
+                    <button class="btn btn-secondary" onclick="shareStory()">📤 Share</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dialects Showcase -->
+    <section class="dialects-showcase" id="dialects">
+        <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 3rem; color: #333;">Tamil Dialects We Preserve</h2>
+        <div class="dialects-grid">
+            <div class="dialect-card" onclick="showDialectInfo('Kongu Tamil')">
+                <h3>🏞️ Kongu Tamil</h3>
+                <p>Coimbatore, Erode Region</p>
+            </div>
+            <div class="dialect-card" onclick="showDialectInfo('Madurai Tamil')">
+                <h3>🎭 Madurai Tamil</h3>
+                <p>Madurai, Sivaganga Region</p>
+            </div>
+            <div class="dialect-card" onclick="showDialectInfo('Tirunelveli Tamil')">
+                <h3>🌊 Tirunelveli Tamil</h3>
+                <p>Coastal Southern Region</p>
+            </div>
+            <div class="dialect-card" onclick="showDialectInfo('Chennai Tamil')">
+                <h3>🏙️ Chennai Tamil</h3>
+                <p>Urban Metropolitan Region</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="footer-content">
+            <h3 style="margin-bottom: 1rem;">Tamil Dialect AI Project</h3>
+            <p style="margin-bottom: 2rem;">Vels Institute of Science Technology and Advanced Studies (VISTAS), Chennai</p>
+            <div class="footer-links">
+                <a href="#">About</a>
+                <a href="#">Research</a>
+                <a href="#">Contribute</a>
+                <a href="#">Contact</a>
+                <a href="#">Privacy</a>
+            </div>
+            <p style="opacity: 0.7;">© 2024 Tamil Dialect AI. Preserving heritage through technology.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Animated Background
+        function createCircles() {
+            const bg = document.getElementById('animatedBg');
+            for (let i = 0; i < 10; i++) {
+                const circle = document.createElement('div');
+                circle.className = 'circle';
+                circle.style.width = Math.random() * 300 + 50 + 'px';
+                circle.style.height = circle.style.width;
+                circle.style.left = Math.random() * 100 + '%';
+                circle.style.top = Math.random() * 100 + '%';
+                circle.style.animationDelay = Math.random() * 5 + 's';
+                circle.style.animationDuration = Math.random() * 10 + 15 + 's';
+                bg.appendChild(circle);
+            }
+        }
+        createCircles();
+
+        // Animate Numbers
+        function animateNumber(card) {
+            const number = card.querySelector('.stat-number');
+            const target = parseInt(number.getAttribute('data-target'));
+            const duration = 2000;
+            const step = target / (duration / 16);
+            let current = 0;
+
+            const timer = setInterval(() => {
+                current += step;
+                if (current >= target) {
+                    number.textContent = target;
+                    clearInterval(timer);
+                } else {
+                    number.textContent = Math.floor(current);
+                }
+            }, 16);
+        }
+
+        // Initialize number animations on load
+        window.addEventListener('load', () => {
+            document.querySelectorAll('.stat-card').forEach(card => {
+                animateNumber(card);
+            });
+        });
+
+        // Scroll to Demo
+        function scrollToDemo() {
+            document.getElementById('demo').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Select Dialect
+        let currentDialect = 'Kongu Tamil';
+        function selectDialect(btn, dialect) {
+            document.querySelectorAll('.dialect-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            currentDialect = dialect;
+        }
+
+        // Generate Story
+        const stories = {
+            'Kongu Tamil': {
+                title: 'முயற்சி திருவினையாக்கும்',
+                content: 'ஒரு காலத்துல எங்கட ஊர்ல ஒரு சிறு விவசாயி வாழ்ந்தான். அவன் வயல்ல நல்ல பயிர் விளைய ரொம்ப முயற்சி பண்ணினான். எல்லாரும் "இந்த மண்ணுல எதுவும் விளையாது"னு சொன்னாங்க. ஆனா அவன் கேக்கலை. மூணு வருஷம் கழிச்சு, அவன் வயல் சிறந்த விளைச்சலை கொடுத்துச்சு.<br><br><strong>பாடம்:</strong> விடாமுயற்சி வெற்றியைத் தரும்.'
+            },
+            'Madurai Tamil': {
+                title: 'புத்திசாலி நரி',
+                content: 'நம்ம ஊர்ல ஒரு காட்டுல புத்திசாலி நரி வாழ்ந்துச்சு. ஒரு நாள் அது திராட்சை பழம் பார்த்துச்சு. பல தடவை குதிச்சும் எட்டலை. கடைசியில "அந்த பழம் புளிச்சிருக்கும்"னு சொல்லிட்டு போச்சு.<br><br><strong>பாடம்:</strong> கிடைக்காததுக்கு சாக்கு சொல்லாதீங்க.'
+            },
+            'Tirunelveli Tamil': {
+                title: 'கடலோர மீனவன்',
+                content: 'கடலோர கிராமத்துல ஒரு மீனவன் இருந்தான். புயல் நாள்ல கடல்ல போனான். படகு கவிழ போகுது. அப்போ டால்பின் வந்து காப்பாத்துச்சு.<br><br><strong>பாடம்:</strong> இயற்கையை மதிக்கனும்.'
+            },
+            'Chennai Tamil': {
+                title: 'நேர்மையான வணிகர்',
+                content: 'சென்னையில ராமு கடை வச்சிருந்தான். ஒரு நாள் தப்பா அதிகமா பணம் குடுத்துட்டான். அவன் ஓடி போய் திரும்ப குடுத்தான். அதுக்கு அப்புறம் அவன் கடை நல்லா ஓடுச்சு.<br><br><strong>பாடம்:</strong> நேர்மை செல்வம் தரும்.'
+            }
+        };
+
+        function generateStory() {
+            const loader = document.getElementById('loader');
+            const display = document.getElementById('storyDisplay');
+            const titleElement = document.getElementById('storyTitle');
+            const contentElement = document.getElementById('storyContent');
+            
+            // Show loader and hide story
+            loader.style.display = 'block';
+            display.style.opacity = '0.5';
+            
+            // Simulate API call delay
+            setTimeout(() => {
+                const story = stories[currentDialect];
+                
+                // Animate the story appearance
+                titleElement.textContent = story.title;
+                contentElement.innerHTML = story.content;
+                
+                // Hide loader and show story
+                loader.style.display = 'none';
+                display.style.opacity = '1';
+                
+                // Add subtle animation to the content
+                display.style.transform = 'translateY(20px)';
+                setTimeout(() => {
+                    display.style.transition = 'transform 0.5s ease-out';
+                    display.style.transform = 'translateY(0)';
+                }, 50);
+            }, 1500);
+        }
+        
+        // Audio playback simulation
+        function playAudio() {
+            alert('Audio playback feature coming soon! 🎵');
+        }
+        
+        // Share story function
+        function shareStory() {
+            const story = stories[currentDialect];
+            const text = `${story.title}\n\n${story.content.replace(/<br><br>/g, '\n\n')}`;
+            
+            if (navigator.share) {
+                navigator.share({
+                    title: 'Tamil Dialect Story',
+                    text: text
+                }).catch(err => {
+                    console.log('Error sharing:', err);
+                    copyToClipboard(text);
+                });
+            } else {
+                copyToClipboard(text);
+            }
+        }
+        
+        // Helper function to copy text to clipboard
+        function copyToClipboard(text) {
+            const textarea = document.createElement('textarea');
+            textarea.value = text.replace(/<[^>]+>/g, '');
+            document.body.appendChild(textarea);
+            textarea.select();
+            try {
+                document.execCommand('copy');
+                alert('Story copied to clipboard! 📋');
+            } catch (err) {
+                console.error('Failed to copy:', err);
+                alert('Failed to copy story 😢');
+            }
+            document.body.removeChild(textarea);
+        }
+        
+        // Show dialect information
+        function showDialectInfo(dialect) {
+            alert(`More information about ${dialect} coming soon! 🎭`);
+        }
+        
+        // Generic alert function
+        function showAlert(message) {
+            alert(`${message} feature coming soon! ✨`);
+        }
+        
+        // Simulate recording function
+        function startRecording() {
+            if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+                alert('Recording feature coming soon! 🎙️\nThis will enable direct story recording from elders.');
+            } else {
+                alert('Microphone access is not available in your browser.');
+            }
+        }
+    </script>
+</body>
+</html>
