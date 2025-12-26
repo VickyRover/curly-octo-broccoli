@@ -1,0 +1,33 @@
+# Core Framework
+streamlit
+
+# Deep Learning
+torch
+transformers
+
+# Model Training & Fine-tuning
+peft
+datasets
+accelerate
+
+# Data Processing
+pandas
+numpy
+
+# NLP & Speech
+sentencepiece
+soundfile
+librosa
+
+# Utilities
+python-dotenv
+tqdm
+
+# Visualization (Optional)
+plotly
+matplotlib
+
+# Storage & Database (Optional for production)
+# psycopg2-binary
+# pymongo
+# sqlalchemy
